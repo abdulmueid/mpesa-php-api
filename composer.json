@@ -1,0 +1,23 @@
+{
+    "name": "abdulmueid/mpesa",
+    "description": "PHP SDK for M-Pesa Mozambique API",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abdul Mueid Akhtar",
+            "email": "abdul.mueid@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "abdulmueid\\mpesa\\": "src/"
+        }
+    }
+}
