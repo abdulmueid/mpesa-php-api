@@ -1,0 +1,185 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * @author      Abdul Mueid Akhtar &lt;abdul.mueid@gmail.com&gt;
+ * @copyright   Copyright (c) Abdul Mueid akhtar
+ * @license     http://mit-license.org/
+ *
+ * @link        https://github.com/abdulmueid/mpesa
+ */
+
+namespace abdulmueid\mpesa;
+
+use abdulmueid\mpesa\interfaces\ConfigInterface;
+
+/**
+ * Class Config
+ * @package abdulmueid\mpesa
+ */
+class Config implements ConfigInterface
+{
+    /**
+     * Public Key for the M-Pesa API. Used for generating Authorization bearer tokens.
+     * @var string
+     */
+    private $public_key;
+
+    /**
+     * API Key for the M-Pesa API. Used for creating authorize trasactions on the API
+     * @var string
+     */
+    private $api_key;
+
+    /**
+     * @var string
+     */
+    private $service_provider_code;
+
+    /**
+     * @var string
+     */
+    private $initiator_identifier;
+
+    /**
+     * @var string
+     */
+    private $security_credential;
+
+    /**
+     * Config constructor.
+     * @param string $public_key
+     * @param string $api_key
+     * @param string $service_provider_code
+     * @param string $initiator_identifier
+     * @param string $security_credential
+     */
+    public function __construct(
+        string $public_key,
+        string $api_key,
+        string $service_provider_code,
+        string $initiator_identifier,
+        string $security_credential
+    )
+    {
+        $this-&gt;public_key = $public_key;
+        $this-&gt;api_key = $api_key;
+        $this-&gt;service_provider_code = $service_provider_code;
+        $this-&gt;initiator_identifier = $initiator_identifier;
+        $this-&gt;security_credential = $security_credential;
+    }
+
+    /**
+     * Loads the configuration from a file and returns a Config instance
+     * @param string $file_path
+     * @return Config
+     */
+    public static function loadFromFile(string $file_path)
+    {
+        $config = require $file_path;
+        return new Config(
+            $config['public_key'],
+            $config['api_key'],
+            $config['service_provider_code'],
+            $config['initiator_identifier'],
+            $config['security_credential']
+        );
+    }
+
+    /**
+     * @return string
+     */
+    public function getPublicKey(): string
+    {
+        return $this-&gt;public_key;
+    }
+
+    /**
+     * @return string
+     */
+    public function getApiKey(): string
+    {
+        return $this-&gt;api_key;
+    }
+
+    /**
+     * @return string
+     */
+    public function getServiceProviderCode(): string
+    {
+        return $this-&gt;service_provider_code;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInitiatorIdentifier(): string
+    {
+        return $this-&gt;initiator_identifier;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSecurityCredential(): string
+    {
+        return $this-&gt;security_credential;
+    }
+
+    /**
+     * Encrypts the API key with public key and returns a usable Bearer Token
+     *
+     * @return string
+     */
+    public function getBearerToken(): string
+    {
+        $key = &quot;-----BEGIN PUBLIC KEY-----\n&quot;;
+        $key .= wordwrap($this-&gt;getPublicKey(), 60, &quot;\n&quot;, true);
+        $key .= &quot;\n-----END PUBLIC KEY-----&quot;;
+        $pk = openssl_get_publickey($key);
+        openssl_public_encrypt($this-&gt;getApiKey(), $token, $pk, OPENSSL_PKCS1_PADDING);
+        return 'Bearer ' . base64_encode($token);
+    }
+}</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

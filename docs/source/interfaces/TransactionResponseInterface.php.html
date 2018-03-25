@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * @author      Abdul Mueid Akhtar &lt;abdul.mueid@gmail.com&gt;
+ * @copyright   Copyright (c) Abdul Mueid akhtar
+ * @license     http://mit-license.org/
+ *
+ * @link        https://github.com/abdulmueid/mpesa
+ */
+
+namespace abdulmueid\mpesa\interfaces;
+
+/**
+ * Interface TransactionResponseInterface
+ * @package abdulmueid\mpesa\interfaces
+ */
+interface TransactionResponseInterface
+{
+    /**
+     * Returns the Response Code
+     *
+     * @return string
+     */
+    public function getCode(): string;
+
+    /**
+     * Returns the response description
+     *
+     * @return string
+     */
+    public function getDescription(): string;
+
+    /**
+     * Returns the TransactionID
+     *
+     * @return string
+     */
+    public function getTransactionID(): string;
+
+    /**
+     * Returns the Conversation ID
+     *
+     * @return string
+     */
+    public function getConversationID(): string;
+
+    /**
+     * Returns the Transaction Status from Query API
+     *
+     * @return string
+     */
+    public function getTransactionStatus(): string;
+
+    /**
+     * Returns the raw response from M-Pesa API
+     *
+     * @return string
+     */
+    public function getResponse(): string;
+}</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

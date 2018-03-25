@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project title="API Documentation" version="2.8.5">
+  <partials/>
+  <file path="Config.php" generated-path="Config.html" hash="061d14a645733e1da45c4d3bc098e162" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="author" line="0" description="Abdul Mueid Akhtar" link="mailto:abdul.mueid@gmail.com"/>
+      <tag name="copyright" line="0" description="Copyright (c) Abdul Mueid akhtar"/>
+      <tag name="license" line="0" description="http://mit-license.org/" link="http://mit-license.org/"/>
+      <tag name="link" line="0" description="https://github.com/abdulmueid/mpesa" link="https://github.com/abdulmueid/mpesa"/>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="ConfigInterface">\abdulmueid\mpesa\interfaces\ConfigInterface</namespace-alias>
+    <class final="false" abstract="false" namespace="abdulmueid\mpesa" line="18" package="abdulmueid\mpesa">
+      <extends/>
+      <implements>\abdulmueid\mpesa\interfaces\ConfigInterface</implements>
+      <name>Config</name>
+      <full_name>\abdulmueid\mpesa\Config</full_name>
+      <docblock line="18">
+        <description>Class Config</description>
+        <long-description></long-description>
+        <tag name="package" line="18" description="abdulmueid\mpesa"/>
+      </docblock>
+      <property static="false" visibility="private" namespace="abdulmueid\mpesa" line="24" package="abdulmueid\mpesa">
+        <name>$public_key</name>
+        <full_name>\abdulmueid\mpesa\Config::public_key</full_name>
+        <default></default>
+        <docblock line="24">
+          <description>Public Key for the M-Pesa API. Used for generating Authorization bearer tokens.</description>
+          <long-description></long-description>
+          <tag name="var" line="24" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="abdulmueid\mpesa" line="30" package="abdulmueid\mpesa">
+        <name>$api_key</name>
+        <full_name>\abdulmueid\mpesa\Config::api_key</full_name>
+        <default></default>
+        <docblock line="30">
+          <description>API Key for the M-Pesa API. Used for creating authorize trasactions on the API</description>
+          <long-description></long-description>
+          <tag name="var" line="30" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="abdulmueid\mpesa" line="35" package="abdulmueid\mpesa">
+        <name>$service_provider_code</name>
+        <full_name>\abdulmueid\mpesa\Config::service_provider_code</full_name>
+        <default></default>
+        <docblock line="35">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="35" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="abdulmueid\mpesa" line="40" package="abdulmueid\mpesa">
+        <name>$initiator_identifier</name>
+        <full_name>\abdulmueid\mpesa\Config::initiator_identifier</full_name>
+        <default></default>
+        <docblock line="40">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="40" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="abdulmueid\mpesa" line="45" package="abdulmueid\mpesa">
+        <name>$security_credential</name>
+        <full_name>\abdulmueid\mpesa\Config::security_credential</full_name>
+        <default></default>
+        <docblock line="45">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="45" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa" line="55" package="abdulmueid\mpesa">
+        <name>__construct</name>
+        <full_name>\abdulmueid\mpesa\Config::__construct()</full_name>
+        <docblock line="55">
+          <description>Config constructor.</description>
+          <long-description></long-description>
+          <tag name="param" line="55" description="" type="string" variable="$public_key">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="55" description="" type="string" variable="$api_key">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="55" description="" type="string" variable="$service_provider_code">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="55" description="" type="string" variable="$initiator_identifier">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="55" description="" type="string" variable="$security_credential">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$public_key</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$api_key</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$service_provider_code</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$initiator_identifier</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$security_credential</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="abdulmueid\mpesa" line="75" package="abdulmueid\mpesa">
+        <name>loadFromFile</name>
+        <full_name>\abdulmueid\mpesa\Config::loadFromFile()</full_name>
+        <docblock line="75">
+          <description>Loads the configuration from a file and returns a Config instance</description>
+          <long-description></long-description>
+          <tag name="param" line="75" description="" type="string" variable="$file_path">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="75" description="" type="\abdulmueid\mpesa\Config">
+            <type>\abdulmueid\mpesa\Config</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$file_path</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa" line="90" package="abdulmueid\mpesa">
+        <name>getPublicKey</name>
+        <full_name>\abdulmueid\mpesa\Config::getPublicKey()</full_name>
+        <docblock line="90">
+          <description>Returns the Public Key</description>
+          <long-description></long-description>
+          <tag name="return" line="90" description="" type="string">
+            <type>string</type>
+          </tag>
+          <tag name="inherited_from" description="\abdulmueid\mpesa\interfaces\ConfigInterface::getPublicKey()" refers="\abdulmueid\mpesa\interfaces\ConfigInterface::getPublicKey()" link="/classes/abdulmueid.mpesa.interfaces.ConfigInterface.html#method_getPublicKey"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa" line="98" package="abdulmueid\mpesa">
+        <name>getApiKey</name>
+        <full_name>\abdulmueid\mpesa\Config::getApiKey()</full_name>
+        <docblock line="98">
+          <description>Returns the API Key</description>
+          <long-description></long-description>
+          <tag name="return" line="98" description="" type="string">
+            <type>string</type>
+          </tag>
+          <tag name="inherited_from" description="\abdulmueid\mpesa\interfaces\ConfigInterface::getApiKey()" refers="\abdulmueid\mpesa\interfaces\ConfigInterface::getApiKey()" link="/classes/abdulmueid.mpesa.interfaces.ConfigInterface.html#method_getApiKey"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa" line="106" package="abdulmueid\mpesa">
+        <name>getServiceProviderCode</name>
+        <full_name>\abdulmueid\mpesa\Config::getServiceProviderCode()</full_name>
+        <docblock line="106">
+          <description>Returns the Service Provider Code</description>
+          <long-description></long-description>
+          <tag name="return" line="106" description="" type="string">
+            <type>string</type>
+          </tag>
+          <tag name="inherited_from" description="\abdulmueid\mpesa\interfaces\ConfigInterface::getServiceProviderCode()" refers="\abdulmueid\mpesa\interfaces\ConfigInterface::getServiceProviderCode()" link="/classes/abdulmueid.mpesa.interfaces.ConfigInterface.html#method_getServiceProviderCode"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa" line="114" package="abdulmueid\mpesa">
+        <name>getInitiatorIdentifier</name>
+        <full_name>\abdulmueid\mpesa\Config::getInitiatorIdentifier()</full_name>
+        <docblock line="114">
+          <description>Returns the Initiator Identifier</description>
+          <long-description></long-description>
+          <tag name="return" line="114" description="" type="string">
+            <type>string</type>
+          </tag>
+          <tag name="inherited_from" description="\abdulmueid\mpesa\interfaces\ConfigInterface::getInitiatorIdentifier()" refers="\abdulmueid\mpesa\interfaces\ConfigInterface::getInitiatorIdentifier()" link="/classes/abdulmueid.mpesa.interfaces.ConfigInterface.html#method_getInitiatorIdentifier"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa" line="122" package="abdulmueid\mpesa">
+        <name>getSecurityCredential</name>
+        <full_name>\abdulmueid\mpesa\Config::getSecurityCredential()</full_name>
+        <docblock line="122">
+          <description>Returns the Security Credential</description>
+          <long-description></long-description>
+          <tag name="return" line="122" description="" type="string">
+            <type>string</type>
+          </tag>
+          <tag name="inherited_from" description="\abdulmueid\mpesa\interfaces\ConfigInterface::getSecurityCredential()" refers="\abdulmueid\mpesa\interfaces\ConfigInterface::getSecurityCredential()" link="/classes/abdulmueid.mpesa.interfaces.ConfigInterface.html#method_getSecurityCredential"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa" line="132" package="abdulmueid\mpesa">
+        <name>getBearerToken</name>
+        <full_name>\abdulmueid\mpesa\Config::getBearerToken()</full_name>
+        <docblock line="132">
+          <description>Encrypts the API key with public key and returns a usable Bearer Token</description>
+          <long-description></long-description>
+          <tag name="return" line="132" description="" type="string">
+            <type>string</type>
+          </tag>
+          <tag name="inherited_from" description="\abdulmueid\mpesa\interfaces\ConfigInterface::getBearerToken()" refers="\abdulmueid\mpesa\interfaces\ConfigInterface::getBearerToken()" link="/classes/abdulmueid.mpesa.interfaces.ConfigInterface.html#method_getBearerToken"/>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="90" code="PPC:ERR-50008">No summary for method getPublicKey()</error>
+      <error line="98" code="PPC:ERR-50008">No summary for method getApiKey()</error>
+      <error line="106" code="PPC:ERR-50008">No summary for method getServiceProviderCode()</error>
+      <error line="114" code="PPC:ERR-50008">No summary for method getInitiatorIdentifier()</error>
+      <error line="122" code="PPC:ERR-50008">No summary for method getSecurityCredential()</error>
+      <error line="35" code="PPC:ERR-50007">No summary for property $service_provider_code</error>
+      <error line="40" code="PPC:ERR-50007">No summary for property $initiator_identifier</error>
+      <error line="45" code="PPC:ERR-50007">No summary for property $security_credential</error>
+    </parse_markers>
+    <source>eJytVk1v2zgQvQfIfxgEAWwHjr0LLHpo0m4cxy2MpKmBtIdiUwi0TEuEJYpLUgm8Qf97h6RkyxLlTYLwYpt88+bNB8c8/1vE4vBgeHJyeAAncEFyHWcS7BrNF3kCX3LKFjBaxZpIOCdmb5CavYsoJSwZhFn60dmGmVhLFsUabceb792wt8NELJOzSFhIuaLWW6y1eD8cpkyfFtuDTEZDAyzBfAXFMmCF6IjpOJ8bDUOrzAobpoIqYozQ+vCAk5QqQUIKW8i9hZyZ41w1D+4Z11Qu0UbdjzO+ZNG03LA2ZbrGCVEKHMKJRD8rEjUZCzVhxQBYKhKaUq7LnY2Tw4MnNMDlHJl1ArN8jomBa7qGJZZIxxS+nM6QG0az6QC+K7qwBxHlVBLNeAQjW032H/7KOMwpkRQNsxVmd7DhvXjAwiot0aDcG7ovQrIHoikcC+s6WNG1Db+uDP3/v6xQUieKFKIoaEkUCY02BajPmKLNS4QRwVpVPcNcUfmAvRYImT2wBZVBmC3oa8kYZ5oRnckAqbhmS0bl64WFuWR6HWDWLBlJvFRFJ4WYQS3zEJ1X6iqIJGnhqFrDNkSRzLZjb7LawL5ktBM3gq3nxbX+Mue2WyAINhF3CyiuZqT95mERpOfEG58H5wvNS9cSVc99PG1NjnXM1OnHrW74ULtzNWQRhIFtb0AN4w3HWLQ1fc3eF6Yxb2nzhvdG9M63r6+N3S9fe99kZKHsXAhto+fSTbKlzFIgsGQJTlq+AEl1LnGIkM1oxe4gPGxtT2MZCKLjLcBxbIe5p/+QU1fbMEF5n1DKJ2TrNqg9dXZRYCIk/TdnklbQlRQWSjh9LNRUerxC809n2yKdn/0WTNEf7QBvO7TDfeXfR96od+fnFtvbV/yyIv5JWZsIEdXu/xH/h7q99ztGT43UNi7cW+oYCfYSEbsX+E0U3LmSzoqKjrGgz5azbzq8ibhp2UDTTf88W9ye2fNGiXPtOt506wvy9qLJNuGhXAutykcPmHH+iK/ZUpb5vTvackXmOO8u3Svum3nFlXSvDtiRWa49kR67/5qjU7MuJ5+ntzD7fnkzHcP15IfdvOdHZzX84AM8ZnLxKInoFjnavaR9ePdHH47QtI8vwZz2PAx4avknt1d1lzsOxQr1ZQLftSoJ0E3gYkWWrqGqUpeo4vJTV4iKxPL+9rG0JjF9Q9+Hr7PJ7d3dTTC7Ht/9GcxGV1fT28+95tjuFAXqwADmRNF3fxkf5go6usrM+/Ubz9vpCg==</source>
+  </file>
+  <file path="interfaces/ConfigInterface.php" generated-path="interfaces.ConfigInterface.html" hash="7a103c37c7550491d9a618190a8e5c2f" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="author" line="0" description="Abdul Mueid Akhtar" link="mailto:abdul.mueid@gmail.com"/>
+      <tag name="copyright" line="0" description="Copyright (c) Abdul Mueid akhtar"/>
+      <tag name="license" line="0" description="http://mit-license.org/" link="http://mit-license.org/"/>
+      <tag name="link" line="0" description="https://github.com/abdulmueid/mpesa" link="https://github.com/abdulmueid/mpesa"/>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <interface namespace="abdulmueid\mpesa\interfaces" line="16" package="abdulmueid\mpesa\interfaces">
+      <name>ConfigInterface</name>
+      <full_name>\abdulmueid\mpesa\interfaces\ConfigInterface</full_name>
+      <docblock line="16">
+        <description>Interface ConfigInterface</description>
+        <long-description></long-description>
+        <tag name="package" line="16" description="abdulmueid\mpesa\interfaces"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa\interfaces" line="24" package="abdulmueid\mpesa\interfaces">
+        <name>getPublicKey</name>
+        <full_name>\abdulmueid\mpesa\interfaces\ConfigInterface::getPublicKey()</full_name>
+        <docblock line="24">
+          <description>Returns the Public Key</description>
+          <long-description></long-description>
+          <tag name="return" line="24" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa\interfaces" line="31" package="abdulmueid\mpesa\interfaces">
+        <name>getApiKey</name>
+        <full_name>\abdulmueid\mpesa\interfaces\ConfigInterface::getApiKey()</full_name>
+        <docblock line="31">
+          <description>Returns the API Key</description>
+          <long-description></long-description>
+          <tag name="return" line="31" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa\interfaces" line="38" package="abdulmueid\mpesa\interfaces">
+        <name>getServiceProviderCode</name>
+        <full_name>\abdulmueid\mpesa\interfaces\ConfigInterface::getServiceProviderCode()</full_name>
+        <docblock line="38">
+          <description>Returns the Service Provider Code</description>
+          <long-description></long-description>
+          <tag name="return" line="38" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa\interfaces" line="45" package="abdulmueid\mpesa\interfaces">
+        <name>getInitiatorIdentifier</name>
+        <full_name>\abdulmueid\mpesa\interfaces\ConfigInterface::getInitiatorIdentifier()</full_name>
+        <docblock line="45">
+          <description>Returns the Initiator Identifier</description>
+          <long-description></long-description>
+          <tag name="return" line="45" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa\interfaces" line="51" package="abdulmueid\mpesa\interfaces">
+        <name>getSecurityCredential</name>
+        <full_name>\abdulmueid\mpesa\interfaces\ConfigInterface::getSecurityCredential()</full_name>
+        <docblock line="51">
+          <description>Returns the Security Credential</description>
+          <long-description></long-description>
+          <tag name="return" line="51" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa\interfaces" line="58" package="abdulmueid\mpesa\interfaces">
+        <name>getBearerToken</name>
+        <full_name>\abdulmueid\mpesa\interfaces\ConfigInterface::getBearerToken()</full_name>
+        <docblock line="58">
+          <description>Encrypts the API key with public key and returns a usable Bearer Token</description>
+          <long-description></long-description>
+          <tag name="return" line="58" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+    </interface>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>eJytk01PwzAMhs9M2n/wESax3geCDcRhQkgTcOSStV5rtU0j1xmqEP+dfLSbdoBpGjklzuvHb5zk9t4UZjxKJpPxCCYwV1aKhiGMxTqzFbxYpAwWZSGK4Vb52LT2sXleK6qmaVPfxdy0MR1TXojLfdzNL9OrA5IKpJhRUYq6xVCtEDGzJKlJrvvwtOE88cJBrEvohxe3Tp2TFHbtPSTBWTCW1AZb5ZNc9nikVY2tUSnCXvIRJB+kBXnjttobrxy6sBzC7hh6Q/luHY04VqnyP3F9cfod9OUL+qPEon5M4BXFsm5BCoSVXbs+wDN2w/ZONuegg1aYdD6EkzgxMW9jdSrUaMhRIsqRLq9mfdLNsfKL1fJfai8MnVb4DXnr7h9W3GwpQ3aty/BsGz11gHrmCZ6WmoSUuI+xzFALbQj5bEs76J55xNLFYZ9SyyQdPDIGgKrO6E5k7VFHnDzplDsj+6dSYgef7jMOdL9WOgPuHSuwrVpXCA+o2F3qe1OiPruFERZYB4a/fwA+o2nm</source>
+  </file>
+  <file path="interfaces/TransactionInterface.php" generated-path="interfaces.TransactionInterface.html" hash="3ffcbe9a0d1026023f346161d89ff6de" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="author" line="0" description="Abdul Mueid Akhtar" link="mailto:abdul.mueid@gmail.com"/>
+      <tag name="copyright" line="0" description="Copyright (c) Abdul Mueid akhtar"/>
+      <tag name="license" line="0" description="http://mit-license.org/" link="http://mit-license.org/"/>
+      <tag name="link" line="0" description="https://github.com/abdulmueid/mpesa" link="https://github.com/abdulmueid/mpesa"/>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <interface namespace="abdulmueid\mpesa\interfaces" line="16" package="abdulmueid\mpesa\interfaces">
+      <name>TransactionInterface</name>
+      <full_name>\abdulmueid\mpesa\interfaces\TransactionInterface</full_name>
+      <docblock line="16">
+        <description>Interface TransactionInterface</description>
+        <long-description></long-description>
+        <tag name="package" line="16" description="abdulmueid\mpesa\interfaces"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa\interfaces" line="26" package="abdulmueid\mpesa\interfaces">
+        <name>payment</name>
+        <full_name>\abdulmueid\mpesa\interfaces\TransactionInterface::payment()</full_name>
+        <docblock line="26">
+          <description>Initiates a payment transaction on the M-Pesa C2B API</description>
+          <long-description></long-description>
+          <tag name="param" line="26" description="" type="string" variable="$msisdn">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="26" description="" type="float" variable="$amount">
+            <type>float</type>
+          </tag>
+          <tag name="param" line="26" description="" type="string" variable="$reference">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="26" description="" type="string" variable="$third_party_reference">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="26" description="" type="\abdulmueid\mpesa\interfaces\TransactionResponseInterface">
+            <type>\abdulmueid\mpesa\interfaces\TransactionResponseInterface</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$msisdn</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$amount</name>
+          <default></default>
+          <type>float</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$reference</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$third_party_reference</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa\interfaces" line="34" package="abdulmueid\mpesa\interfaces">
+        <name>refund</name>
+        <full_name>\abdulmueid\mpesa\interfaces\TransactionInterface::refund()</full_name>
+        <docblock line="34">
+          <description>Initiates the refund of a transaction on the M-Pesa Reversal API</description>
+          <long-description></long-description>
+          <tag name="param" line="34" description="" type="string" variable="$transaction_id">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="34" description="" type="float" variable="$amount">
+            <type>float</type>
+          </tag>
+          <tag name="return" line="34" description="" type="\abdulmueid\mpesa\interfaces\TransactionResponseInterface">
+            <type>\abdulmueid\mpesa\interfaces\TransactionResponseInterface</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$transaction_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$amount</name>
+          <default></default>
+          <type>float</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa\interfaces" line="41" package="abdulmueid\mpesa\interfaces">
+        <name>query</name>
+        <full_name>\abdulmueid\mpesa\interfaces\TransactionInterface::query()</full_name>
+        <docblock line="41">
+          <description>Queries the status of a transaction on the M-Pesa Query Transaction Status API</description>
+          <long-description></long-description>
+          <tag name="param" line="41" description="" type="string" variable="$query_reference">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="41" description="" type="\abdulmueid\mpesa\interfaces\TransactionResponseInterface">
+            <type>\abdulmueid\mpesa\interfaces\TransactionResponseInterface</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$query_reference</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+    </interface>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>eJy1UstOwzAQvFfqP+yBQ6lKI3EEBBROHJB4HZGqbbJJrMZ2sNdIFeLfsZ20tNCmCISVQ7Se2Z2d8dlFXdb9XjIc9nswhEt0XGoD8Uxmmavg1pHIYDIvGQ2cYaiNZahdFhJFNU61PG+4qa4XRhQle+716n+QHm50wtipYVQiJWUpTiuZ65MkkYKP2vJYmyIJwCVYzaE9AWw9uhBculnQkERlUVgia7IYSJ7d7ymUZGtMCT4hzxHyLBSTyf2VPQ3IpQs3yzI8GVQWUxZarYqNGt9wjkVnz1aB2NPtzeP8aYaHEwQIFshkAaHGhSTFwJ9k8B+XBLdHd34iXB9fweTuZsX22gxKsGyEKuBAWmEz9fU2rzQyHKDUTvEuqqGcDKm481YAl8JkU1/jxXQL2BA7o9b3fvBRaJ/tupsRnDQ/tZv59CF3qtm03X6wucxoU/7ou+BRt8TDk05R8TXsDiV471s5lYHOfUS7o3mgVzIWq6581thTkf0wp7872yww2K7ii8G/sevekRGtWZaRnd1nVmAs1gfBY8PrMO8lcP7n6cXWgx2D9jvy/gFgVLqI</source>
+  </file>
+  <file path="interfaces/TransactionResponseInterface.php" generated-path="interfaces.TransactionResponseInterface.html" hash="e0dbbbef17b1b14afc9610097db7c867" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="author" line="0" description="Abdul Mueid Akhtar" link="mailto:abdul.mueid@gmail.com"/>
+      <tag name="copyright" line="0" description="Copyright (c) Abdul Mueid akhtar"/>
+      <tag name="license" line="0" description="http://mit-license.org/" link="http://mit-license.org/"/>
+      <tag name="link" line="0" description="https://github.com/abdulmueid/mpesa" link="https://github.com/abdulmueid/mpesa"/>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <interface namespace="abdulmueid\mpesa\interfaces" line="16" package="abdulmueid\mpesa\interfaces">
+      <name>TransactionResponseInterface</name>
+      <full_name>\abdulmueid\mpesa\interfaces\TransactionResponseInterface</full_name>
+      <docblock line="16">
+        <description>Interface TransactionResponseInterface</description>
+        <long-description></long-description>
+        <tag name="package" line="16" description="abdulmueid\mpesa\interfaces"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa\interfaces" line="23" package="abdulmueid\mpesa\interfaces">
+        <name>getCode</name>
+        <full_name>\abdulmueid\mpesa\interfaces\TransactionResponseInterface::getCode()</full_name>
+        <docblock line="23">
+          <description>Returns the Response Code</description>
+          <long-description></long-description>
+          <tag name="return" line="23" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa\interfaces" line="30" package="abdulmueid\mpesa\interfaces">
+        <name>getDescription</name>
+        <full_name>\abdulmueid\mpesa\interfaces\TransactionResponseInterface::getDescription()</full_name>
+        <docblock line="30">
+          <description>Returns the response description</description>
+          <long-description></long-description>
+          <tag name="return" line="30" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa\interfaces" line="37" package="abdulmueid\mpesa\interfaces">
+        <name>getTransactionID</name>
+        <full_name>\abdulmueid\mpesa\interfaces\TransactionResponseInterface::getTransactionID()</full_name>
+        <docblock line="37">
+          <description>Returns the TransactionID</description>
+          <long-description></long-description>
+          <tag name="return" line="37" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa\interfaces" line="44" package="abdulmueid\mpesa\interfaces">
+        <name>getConversationID</name>
+        <full_name>\abdulmueid\mpesa\interfaces\TransactionResponseInterface::getConversationID()</full_name>
+        <docblock line="44">
+          <description>Returns the Conversation ID</description>
+          <long-description></long-description>
+          <tag name="return" line="44" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa\interfaces" line="51" package="abdulmueid\mpesa\interfaces">
+        <name>getTransactionStatus</name>
+        <full_name>\abdulmueid\mpesa\interfaces\TransactionResponseInterface::getTransactionStatus()</full_name>
+        <docblock line="51">
+          <description>Returns the Transaction Status from Query API</description>
+          <long-description></long-description>
+          <tag name="return" line="51" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa\interfaces" line="58" package="abdulmueid\mpesa\interfaces">
+        <name>getResponse</name>
+        <full_name>\abdulmueid\mpesa\interfaces\TransactionResponseInterface::getResponse()</full_name>
+        <docblock line="58">
+          <description>Returns the raw response from M-Pesa API</description>
+          <long-description></long-description>
+          <tag name="return" line="58" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+    </interface>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>eJytkz1vwjAQhnck/sONEAmyU9QSwcKARGlHFuOYxAJ/yD63QlX/e20n5mNBjeAm6/y+7z05OdM3Xet+L8+yfg8ymBGHtTIQq9iV7ggrx3gJxaFGYmBKQm8sQm9WCcKPY6rEa+OlSp8Mr2r03vn5PKDDmyQSkxrHkVMmLYvTakQ9yXPBcdS2x8pUeRAmsTxAW0FsvbriWLtdYMgjWQTLhWaWBJN393uSCGY1oQwukm2UbLlEZvb+yr4EZdrCMrXh0xBpCUWu5MaHKE91vmyofPCBVHezWxL+z9Qfr/fVwITKYMPQGWkBawbJ4VdcsqQ4K2cmSsGi4bJK7bw5aLfzq4W9k3E2VAxDyGA4afVxC/eGmzS8ZJYarkPMwwyLS1YHlKslLhcPM9ykdaCYK/nFjCUx5wkc13mdQK4+AD6QoLOwN0rAu2PmBMV6+cwVNQO6vBvyfXk7kWs1Wvu/5Clg6Y+44fn9A7Xka/8=</source>
+  </file>
+  <file path="Transaction.php" generated-path="Transaction.html" hash="758fb0e3a1de74c6fd4ce6b42d3466aa" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="author" line="0" description="Abdul Mueid Akhtar" link="mailto:abdul.mueid@gmail.com"/>
+      <tag name="copyright" line="0" description="Copyright (c) Abdul Mueid akhtar"/>
+      <tag name="license" line="0" description="http://mit-license.org/" link="http://mit-license.org/"/>
+      <tag name="link" line="0" description="https://github.com/abdulmueid/mpesa" link="https://github.com/abdulmueid/mpesa"/>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="ConfigInterface">\abdulmueid\mpesa\interfaces\ConfigInterface</namespace-alias>
+    <namespace-alias name="TransactionInterface">\abdulmueid\mpesa\interfaces\TransactionInterface</namespace-alias>
+    <namespace-alias name="TransactionResponseInterface">\abdulmueid\mpesa\interfaces\TransactionResponseInterface</namespace-alias>
+    <class final="false" abstract="false" namespace="abdulmueid\mpesa" line="20" package="abdulmueid\mpesa">
+      <extends/>
+      <implements>\abdulmueid\mpesa\interfaces\TransactionInterface</implements>
+      <name>Transaction</name>
+      <full_name>\abdulmueid\mpesa\Transaction</full_name>
+      <docblock line="20">
+        <description>Class Transaction</description>
+        <long-description></long-description>
+        <tag name="package" line="20" description="abdulmueid\mpesa"/>
+      </docblock>
+      <property static="false" visibility="private" namespace="abdulmueid\mpesa" line="26" package="abdulmueid\mpesa">
+        <name>$config</name>
+        <full_name>\abdulmueid\mpesa\Transaction::config</full_name>
+        <default></default>
+        <docblock line="26">
+          <description>The configuration class</description>
+          <long-description></long-description>
+          <tag name="var" line="26" description="" type="\abdulmueid\mpesa\interfaces\ConfigInterface" variable="">
+            <type>\abdulmueid\mpesa\interfaces\ConfigInterface</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa" line="32" package="abdulmueid\mpesa">
+        <name>__construct</name>
+        <full_name>\abdulmueid\mpesa\Transaction::__construct()</full_name>
+        <docblock line="32">
+          <description>Transaction constructor.</description>
+          <long-description></long-description>
+          <tag name="param" line="32" description="" type="\abdulmueid\mpesa\interfaces\ConfigInterface" variable="$config">
+            <type>\abdulmueid\mpesa\interfaces\ConfigInterface</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$config</name>
+          <default></default>
+          <type>\abdulmueid\mpesa\interfaces\ConfigInterface</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa" line="45" package="abdulmueid\mpesa">
+        <name>payment</name>
+        <full_name>\abdulmueid\mpesa\Transaction::payment()</full_name>
+        <docblock line="45">
+          <description>Initiates a payment transaction on the M-Pesa C2B API.</description>
+          <long-description></long-description>
+          <tag name="param" line="45" description="" type="string" variable="$msisdn">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="45" description="" type="float" variable="$amount">
+            <type>float</type>
+          </tag>
+          <tag name="param" line="45" description="" type="string" variable="$reference">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="45" description="" type="string" variable="$third_party_reference">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="45" description="" type="\abdulmueid\mpesa\interfaces\TransactionResponseInterface">
+            <type>\abdulmueid\mpesa\interfaces\TransactionResponseInterface</type>
+          </tag>
+          <tag name="inherited_from" description="\abdulmueid\mpesa\interfaces\TransactionInterface::payment()" refers="\abdulmueid\mpesa\interfaces\TransactionInterface::payment()" link="/classes/abdulmueid.mpesa.interfaces.TransactionInterface.html#method_payment"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$msisdn</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$amount</name>
+          <default></default>
+          <type>float</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$reference</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$third_party_reference</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa" line="75" package="abdulmueid\mpesa">
+        <name>refund</name>
+        <full_name>\abdulmueid\mpesa\Transaction::refund()</full_name>
+        <docblock line="75">
+          <description>Initiates the refund of a transaction on the M-Pesa Reversal API</description>
+          <long-description></long-description>
+          <tag name="param" line="75" description="" type="string" variable="$transaction_id">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="75" description="" type="float" variable="$amount">
+            <type>float</type>
+          </tag>
+          <tag name="return" line="75" description="" type="\abdulmueid\mpesa\interfaces\TransactionResponseInterface">
+            <type>\abdulmueid\mpesa\interfaces\TransactionResponseInterface</type>
+          </tag>
+          <tag name="inherited_from" description="\abdulmueid\mpesa\interfaces\TransactionInterface::refund()" refers="\abdulmueid\mpesa\interfaces\TransactionInterface::refund()" link="/classes/abdulmueid.mpesa.interfaces.TransactionInterface.html#method_refund"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$transaction_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$amount</name>
+          <default></default>
+          <type>float</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa" line="105" package="abdulmueid\mpesa">
+        <name>query</name>
+        <full_name>\abdulmueid\mpesa\Transaction::query()</full_name>
+        <docblock line="105">
+          <description>Queries the status of a transaction on the M-Pesa Query Transaction Status API</description>
+          <long-description></long-description>
+          <tag name="param" line="105" description="" type="string" variable="$query_reference">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="105" description="" type="\abdulmueid\mpesa\interfaces\TransactionResponseInterface">
+            <type>\abdulmueid\mpesa\interfaces\TransactionResponseInterface</type>
+          </tag>
+          <tag name="inherited_from" description="\abdulmueid\mpesa\interfaces\TransactionInterface::query()" refers="\abdulmueid\mpesa\interfaces\TransactionInterface::query()" link="/classes/abdulmueid.mpesa.interfaces.TransactionInterface.html#method_query"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$query_reference</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>eJztV1tv2kgYfY+U/zAPkTAR4CZZbVvSpqGEqki5UDBPzcoa7MGejT1258KWXfW/7zdjA8bYuey2W7XaUaSgmXPOd5nPB/PqTRqm+3v24eH+HjpE51jJMOHIrN7MVxG6UoT6qHcXSszRK6z3OrHeOw9iTKOOl8RnGddL0iWnQSiB219/trzmlhI2Shkjoh5hgphooZRp17ZjKtv5difhga2BKzC7Q/nSYAHogMpQzXQOtsnMJGbHKRFYk4C9v8dwTESKPYI2kFsDOdXHSuwe3FImCZ8DR9z2EzanwXC1cfoww+GYCexJmrB/SBtDwgl0oEjfXFI/wkKgAjzrD5R4h4PdGHkjvDIL0TiNSEyY3Npex9zf+wuosLK4eh0iJyTIMx1RHBsVo7s+P1/AlJRatjq0sw8ppwssCTrIdExpO2EKaQJMSK48mfDOJk6KOY7LkVaa5YhqBiOF5opliq671rRqFJoZM++AXgcypKJ9lh2j14X09emXqiqGjEoKpQqEUYqXutVIFiqDPwn9vGqP4JpQ//gt6o2GOzVCopQF6CAWVPisfDqPEizRAY4TxWQdlZM54YRtrqIMgNq478KeXLoVYE6k4gzdN6EPtDwv39ouprWdfms34db9KTa7j0iqeIlZILg+Dv99ax34uHlaQEG2kJcPsI+bXb0alKVKuhPCF+BRI54sqE94P/FJA70+256R9llAZAXSarYqRftKyCQm/GoynFxcZ3p5myrxPZN6hsvLqMRtNSjvW8badLmaqDs+0g0v8e6bFli/Vbfyd5EwF5C6Bavtra5z8kkRId0QMz8iwPAUj1wKD5HVyL8djp51jp8ddY5PXnaen3SPXpz88qtN08D2jmf5hNmNoqZREEQmqbRK+i3Un44vb0aOOx440/G1M+5dT94Nxi14RBV5ssh7xxm9H/QutEB5aMBjJKTWdpYp6SKcpvBoGPO0dU8a5e6v4JeEBTLsogbq6KcgImzTtzKnZ7636Z9GNqPsDuNbgjnhTnIHSs3CfT252P504txcjQcfpoOJ00KN0c3EeXrfNevdcHB5MWmhmoEQKpKrQSCfiVcWK8Jzk2LkjypPsHK15uMMW/syjDZ4BErmYN/1tj0mC8IFjrR319rrhu1S/5EW/u9NNyvAqs6i5L0/k5M+1hnz60740Ifnjc4p4TXBK5B1wScEppXKZZ8Tg8VRbUFlYJ1k8e3sIlermiiUee9/6L4vjPvy/BH433u/h/dOfwrr/aAIp7nxComlEg8Zr2Yst34pTDLePUb8SXO+zRuukbZqAj3ZXb+Lb/4ofmhuvvROWn2zqPZtVFuaO1M08t3s5r6eKT43pmhUnc/MfmMMoUL9hzTIr2Z239pivvwNF67Ahw==</source>
+  </file>
+  <file path="TransactionResponse.php" generated-path="TransactionResponse.html" hash="9ff9a702a4233362ed2d87dd9044743a" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="author" line="0" description="Abdul Mueid Akhtar" link="mailto:abdul.mueid@gmail.com"/>
+      <tag name="copyright" line="0" description="Copyright (c) Abdul Mueid akhtar"/>
+      <tag name="license" line="0" description="http://mit-license.org/" link="http://mit-license.org/"/>
+      <tag name="link" line="0" description="https://github.com/abdulmueid/mpesa" link="https://github.com/abdulmueid/mpesa"/>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="TransactionResponseInterface">\abdulmueid\mpesa\interfaces\TransactionResponseInterface</namespace-alias>
+    <class final="false" abstract="false" namespace="abdulmueid\mpesa" line="18" package="abdulmueid\mpesa">
+      <extends/>
+      <implements>\abdulmueid\mpesa\interfaces\TransactionResponseInterface</implements>
+      <name>TransactionResponse</name>
+      <full_name>\abdulmueid\mpesa\TransactionResponse</full_name>
+      <docblock line="18">
+        <description>Class TransactionResponse</description>
+        <long-description></long-description>
+        <tag name="package" line="18" description="abdulmueid\mpesa"/>
+      </docblock>
+      <property static="false" visibility="private" namespace="abdulmueid\mpesa" line="24" package="abdulmueid\mpesa">
+        <name>$response</name>
+        <full_name>\abdulmueid\mpesa\TransactionResponse::response</full_name>
+        <default></default>
+        <docblock line="24">
+          <description>Full response from the M-Pesa API</description>
+          <long-description></long-description>
+          <tag name="var" line="24" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="abdulmueid\mpesa" line="30" package="abdulmueid\mpesa">
+        <name>$code</name>
+        <full_name>\abdulmueid\mpesa\TransactionResponse::code</full_name>
+        <default></default>
+        <docblock line="30">
+          <description>Response Code from M-Pesa API</description>
+          <long-description></long-description>
+          <tag name="var" line="30" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="abdulmueid\mpesa" line="36" package="abdulmueid\mpesa">
+        <name>$description</name>
+        <full_name>\abdulmueid\mpesa\TransactionResponse::description</full_name>
+        <default></default>
+        <docblock line="36">
+          <description>Response Description from M-Pesa API</description>
+          <long-description></long-description>
+          <tag name="var" line="36" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="abdulmueid\mpesa" line="42" package="abdulmueid\mpesa">
+        <name>$transaction_id</name>
+        <full_name>\abdulmueid\mpesa\TransactionResponse::transaction_id</full_name>
+        <default></default>
+        <docblock line="42">
+          <description>Transaction ID from M-Pesa Payment and Refund API</description>
+          <long-description></long-description>
+          <tag name="var" line="42" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="abdulmueid\mpesa" line="48" package="abdulmueid\mpesa">
+        <name>$conversation_id</name>
+        <full_name>\abdulmueid\mpesa\TransactionResponse::conversation_id</full_name>
+        <default></default>
+        <docblock line="48">
+          <description>Conversation ID from M-Pesa Payment and Refund API</description>
+          <long-description></long-description>
+          <tag name="var" line="48" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="abdulmueid\mpesa" line="54" package="abdulmueid\mpesa">
+        <name>$transaction_status</name>
+        <full_name>\abdulmueid\mpesa\TransactionResponse::transaction_status</full_name>
+        <default></default>
+        <docblock line="54">
+          <description>Transaction Status from M-Pesa Query API</description>
+          <long-description></long-description>
+          <tag name="var" line="54" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa" line="60" package="abdulmueid\mpesa">
+        <name>__construct</name>
+        <full_name>\abdulmueid\mpesa\TransactionResponse::__construct()</full_name>
+        <docblock line="60">
+          <description>TransactionResponse constructor.</description>
+          <long-description></long-description>
+          <tag name="param" line="60" description="" type="string" variable="$response">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$response</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa" line="75" package="abdulmueid\mpesa">
+        <name>getCode</name>
+        <full_name>\abdulmueid\mpesa\TransactionResponse::getCode()</full_name>
+        <docblock line="75">
+          <description>Returns the Response Code</description>
+          <long-description></long-description>
+          <tag name="return" line="75" description="" type="string">
+            <type>string</type>
+          </tag>
+          <tag name="inherited_from" description="\abdulmueid\mpesa\interfaces\TransactionResponseInterface::getCode()" refers="\abdulmueid\mpesa\interfaces\TransactionResponseInterface::getCode()" link="/classes/abdulmueid.mpesa.interfaces.TransactionResponseInterface.html#method_getCode"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa" line="84" package="abdulmueid\mpesa">
+        <name>getDescription</name>
+        <full_name>\abdulmueid\mpesa\TransactionResponse::getDescription()</full_name>
+        <docblock line="84">
+          <description>Returns the response description</description>
+          <long-description></long-description>
+          <tag name="return" line="84" description="" type="string">
+            <type>string</type>
+          </tag>
+          <tag name="inherited_from" description="\abdulmueid\mpesa\interfaces\TransactionResponseInterface::getDescription()" refers="\abdulmueid\mpesa\interfaces\TransactionResponseInterface::getDescription()" link="/classes/abdulmueid.mpesa.interfaces.TransactionResponseInterface.html#method_getDescription"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa" line="93" package="abdulmueid\mpesa">
+        <name>getTransactionID</name>
+        <full_name>\abdulmueid\mpesa\TransactionResponse::getTransactionID()</full_name>
+        <docblock line="93">
+          <description>Returns the TransactionID</description>
+          <long-description></long-description>
+          <tag name="return" line="93" description="" type="string">
+            <type>string</type>
+          </tag>
+          <tag name="inherited_from" description="\abdulmueid\mpesa\interfaces\TransactionResponseInterface::getTransactionID()" refers="\abdulmueid\mpesa\interfaces\TransactionResponseInterface::getTransactionID()" link="/classes/abdulmueid.mpesa.interfaces.TransactionResponseInterface.html#method_getTransactionID"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa" line="102" package="abdulmueid\mpesa">
+        <name>getConversationID</name>
+        <full_name>\abdulmueid\mpesa\TransactionResponse::getConversationID()</full_name>
+        <docblock line="102">
+          <description>Returns the Conversation ID</description>
+          <long-description></long-description>
+          <tag name="return" line="102" description="" type="string">
+            <type>string</type>
+          </tag>
+          <tag name="inherited_from" description="\abdulmueid\mpesa\interfaces\TransactionResponseInterface::getConversationID()" refers="\abdulmueid\mpesa\interfaces\TransactionResponseInterface::getConversationID()" link="/classes/abdulmueid.mpesa.interfaces.TransactionResponseInterface.html#method_getConversationID"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa" line="111" package="abdulmueid\mpesa">
+        <name>getTransactionStatus</name>
+        <full_name>\abdulmueid\mpesa\TransactionResponse::getTransactionStatus()</full_name>
+        <docblock line="111">
+          <description>Returns the Transaction Status from Query API</description>
+          <long-description></long-description>
+          <tag name="return" line="111" description="" type="string">
+            <type>string</type>
+          </tag>
+          <tag name="inherited_from" description="\abdulmueid\mpesa\interfaces\TransactionResponseInterface::getTransactionStatus()" refers="\abdulmueid\mpesa\interfaces\TransactionResponseInterface::getTransactionStatus()" link="/classes/abdulmueid.mpesa.interfaces.TransactionResponseInterface.html#method_getTransactionStatus"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="abdulmueid\mpesa" line="120" package="abdulmueid\mpesa">
+        <name>getResponse</name>
+        <full_name>\abdulmueid\mpesa\TransactionResponse::getResponse()</full_name>
+        <docblock line="120">
+          <description>Returns the raw response from M-Pesa API</description>
+          <long-description></long-description>
+          <tag name="return" line="120" description="" type="string">
+            <type>string</type>
+          </tag>
+          <tag name="inherited_from" description="\abdulmueid\mpesa\interfaces\TransactionResponseInterface::getResponse()" refers="\abdulmueid\mpesa\interfaces\TransactionResponseInterface::getResponse()" link="/classes/abdulmueid.mpesa.interfaces.TransactionResponseInterface.html#method_getResponse"/>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>eJy1VsmOGjEQvSPxDz6MxKJA32cmAwgUicNIZLmFETLdnm6HXiwvRCiaf4/t3mx3QxpQfAHZVe+9Kj8XPM9IRPo9bzzu98AYzKHgUUaBXot9IGLwKhAOwOIQcUjBM1R700TtzcME4njqZ8lLnutn5ERxGHGZu6y+D/2RhQQ1Up4RYx+lDGm2iHPy6HkJ5pNie5rR0FOBZXB6AMVSwUxGh5hHYq80eFqZFuYlBDGokmR2v5fCBDECfQTqkK0OeVLHgjUPtjjliL7LHLb9QWHKoM9xln6TOJkUti5PNUDZu2UMGQMt4bl8qeAAwyZXodM/lw1wQmKUoJS3Hlda+r0/EkquXI9aY/BFxDGgJdI7zRLAIwReJxvJDBabdRU5P8rrZZziNCz3vPwLofgIOQIPJY6u2mWq5C6zoGC6jcWX+ZcZVoj5FBPVhXuIghqmlc9oNlivLKYNPKkLATANpKx3IT+uJOc1+A4HrfzLLD0iyuD/EeAb6OcUmB34ziEXzBLxVSB6uqdwpjH/RV3du5QssYXPMzqtKQmkMClIa4+69GIvhwqQjcqr2e0qsKGbOspTitek1gOPMJu8VO/os/UWqiithMnTX0wWFyDl5KGT+wlIUjR6aoCrYAWcg/wcZIITwXdl8epVDd7AbAYGg2ayYeULGOrdnMewHdkCY1zJenUexzFWC5Bp7EtITatcKM5Ql1vVwf1oHylc0JTpmWgNsNpeVIecMbXjqhBxlTwcPVrxhpMKNOPOu8qrzGfc9c0qjQnaWaw9Ljtpthxzs1gLpbPcxoDtpNiZuXfYwLT4FYZwh/K1fbbmdMuAvr33OfBN/a/mfDenw9/OX5a23/crCylfd2f9zoCXqj/+AvLRRPc=</source>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="abdulmueid" full_name="abdulmueid">
+    <package name="mpesa" full_name="abdulmueid\mpesa">
+      <package name="interfaces" full_name="abdulmueid\mpesa\interfaces"/>
+    </package>
+  </package>
+  <package name="global" full_name="global"/>
+  <namespace name="abdulmueid" full_name="abdulmueid">
+    <namespace name="mpesa" full_name="abdulmueid\mpesa">
+      <namespace name="interfaces" full_name="abdulmueid\mpesa\interfaces"/>
+    </namespace>
+  </namespace>
+  <deprecated count="0"/>
+</project>

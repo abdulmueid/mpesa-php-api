@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <phpdoc>
     <parser>
-        <target>./docs/</target>
+        <target>./docs/cache</target>
     </parser>
     <transformer>
         <target>./docs</target>
     </transformer>
     <transformations>
-        <template name="zend" />
+        <template name="new-black" />
     </transformations>
     <files>
         <directory>./src</directory>
