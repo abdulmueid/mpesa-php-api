@@ -32,7 +32,7 @@ class MPesaTest extends \PHPUnit\Framework\TestCase
         $config = Config::loadFromFile(__DIR__ . '/config.test.php');
         $this->transaction = new \abdulmueid\mpesa\Transaction($config);
         $this->amount = 1;
-        $this->msisdn = '258849901508'; // Full MSISDN i.e. 258840000000
+        $this->msisdn = ''; // Full MSISDN i.e. 258840000000
     }
 
     /**
