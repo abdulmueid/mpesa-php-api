@@ -49,6 +49,10 @@ composer require abdulmueid/mpesa
         $query = $transaction->query(...);
         ```
         
+## License
+
+This library is release under the MIT License. See LICENSE file for details.
+
 ## TODO
 
 1. Improve documentation
