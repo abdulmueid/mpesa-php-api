@@ -4,7 +4,7 @@
  * @copyright   Copyright (c) Abdul Mueid akhtar
  * @license     http://mit-license.org/
  *
- * @link        https://github.com/abdulmueid/mpesa
+ * @link        https://github.com/abdulmueid/mpesa-php-api
  */
 
 namespace abdulmueid\mpesa\interfaces;
@@ -31,6 +31,13 @@ interface ConfigInterface
     public function getApiKey(): string;
 
     /**
+     * Returns the Origin Header
+     *
+     * @return string
+     */
+    public function getOrigin(): string;
+
+    /**
      * Returns the Service Provider Code
      *
      * @return string
@@ -45,7 +52,8 @@ interface ConfigInterface
     public function getInitiatorIdentifier(): string;
 
     /**
-     * 	Returns the Security Credential
+     * Returns the Security Credential
+     *
      * @return string
      */
     public function getSecurityCredential(): string;
@@ -56,4 +64,11 @@ interface ConfigInterface
      * @return string
      */
     public function getBearerToken(): string;
+
+    /**
+     * Returns API Hostname
+     *
+     * @return string
+     */
+    public function getApiHost(): string;
 }

@@ -4,7 +4,7 @@
  * @copyright   Copyright (c) Abdul Mueid akhtar
  * @license     http://mit-license.org/
  *
- * @link        https://github.com/abdulmueid/mpesa
+ * @link        https://github.com/abdulmueid/mpesa-php-api
  */
 
 namespace abdulmueid\mpesa\interfaces;

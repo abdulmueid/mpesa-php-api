@@ -7,7 +7,7 @@
         <target>./docs</target>
     </transformer>
     <transformations>
-        <template name="new-black" />
+        <template name="clean" />
     </transformations>
     <files>
         <directory>./src</directory>
