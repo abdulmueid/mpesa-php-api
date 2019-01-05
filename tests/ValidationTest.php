@@ -1,14 +1,15 @@
 <?php
+/**
+ * @author      Abdul Mueid Akhtar <abdul.mueid@gmail.com>
+ * @copyright   Copyright (c) Abdul Mueid akhtar
+ * @license     http://mit-license.org/
+ *
+ * @link        https://github.com/abdulmueid/mpesa-php-api
+ */
 
 use abdulmueid\mpesa\helpers\ValidationHelper;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Created by PhpStorm.
- * User: Abdul
- * Date: 1/5/2019
- * Time: 11:50 AM
- */
 class ValidationTest extends TestCase
 {
     private $validMSISDNs;
