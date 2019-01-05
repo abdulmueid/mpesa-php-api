@@ -42,15 +42,15 @@ class Transaction implements TransactionInterface
      * @param string $reference
      * @param string $third_party_reference
      * @return TransactionResponseInterface
+     * @throws \Exception
      */
-    public function payment(string $msisdn, float $amount, string $reference, string $third_party_reference): TransactionResponseInterface
+    public function payment(
+        string $msisdn,
+        float $amount,
+        string $reference,
+        string $third_party_reference): TransactionResponseInterface
     {
-        try {
-            $msisdn = ValidationHelper::normalizeMSISDN($msisdn);
-        } catch (Exception $e) {
-            return $e->getMessage();
-        }
-
+        $msisdn = ValidationHelper::normalizeMSISDN($msisdn);
         $amount = round($amount, 2);
         $payload = [
             'input_ServiceProviderCode' => $this->config->getServiceProviderCode(),
@@ -60,7 +60,7 @@ class Transaction implements TransactionInterface
             'input_ThirdPartyReference' => $third_party_reference
         ];
         $payload = json_encode($payload);
-        $request_handle = curl_init('https://'.$this->config->getApiHost().':18346/ipg/v1/c2bpayment/');
+        $request_handle = curl_init('https://' . $this->config->getApiHost() . ':18346/ipg/v1/c2bpayment/');
         curl_setopt($request_handle, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($request_handle, CURLOPT_HTTPHEADER, [
             'Content-Type: application/json',
@@ -92,7 +92,7 @@ class Transaction implements TransactionInterface
         ];
 
         $payload = json_encode($payload);
-        $request_handle = curl_init('https://'.$this->config->getApiHost().':18348/ipg/v1/reversal/');
+        $request_handle = curl_init('https://' . $this->config->getApiHost() . ':18348/ipg/v1/reversal/');
         curl_setopt($request_handle, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($request_handle, CURLOPT_HTTPHEADER, [
             'Content-Type: application/json',
@@ -120,7 +120,7 @@ class Transaction implements TransactionInterface
             'input_QueryReference' => $query_reference
         ];
         $payload = http_build_query($payload);
-        $request_handle = curl_init('https://'.$this->config->getApiHost().':18347/ipg/v1/queryTxn/?' . $payload);
+        $request_handle = curl_init('https://' . $this->config->getApiHost() . ':18347/ipg/v1/queryTxn/?' . $payload);
         curl_setopt($request_handle, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($request_handle, CURLOPT_HTTPHEADER, [
             'Content-Type: application/json',
