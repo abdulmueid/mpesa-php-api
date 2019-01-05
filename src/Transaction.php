@@ -12,6 +12,7 @@ namespace abdulmueid\mpesa;
 use abdulmueid\mpesa\interfaces\ConfigInterface;
 use abdulmueid\mpesa\interfaces\TransactionInterface;
 use abdulmueid\mpesa\interfaces\TransactionResponseInterface;
+use abdulmueid\mpesa\helpers\ValidationHelper;
 
 /**
  * Class Transaction
@@ -44,6 +45,12 @@ class Transaction implements TransactionInterface
      */
     public function payment(string $msisdn, float $amount, string $reference, string $third_party_reference): TransactionResponseInterface
     {
+        try {
+            $msisdn = ValidationHelper::normalizeMSISDN($msisdn);
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+
         $amount = round($amount, 2);
         $payload = [
             'input_ServiceProviderCode' => $this->config->getServiceProviderCode(),
