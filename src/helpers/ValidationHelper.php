@@ -23,6 +23,7 @@ class ValidationHelper {
      * – Accepts MSISDN in the following formats:
      *      * (84|85)xxxxxxx
      *      * 258(84|85)xxxxxxx 
+     *      * +258(84|85)xxxxxxx
      *      * 00258(84|85)xxxxxxx
      * 
      * @param $msisdn msisdn which will be validated and normalized afterwards.
