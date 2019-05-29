@@ -107,16 +107,6 @@ class Config implements ConfigInterface
     }
 
     /**
-     * Returns the Public Key
-     *
-     * @return string
-     */
-    public function getPublicKey(): string
-    {
-        return $this->public_key;
-    }
-
-    /**
      * Returns API Hostname
      *
      * @return string
@@ -124,16 +114,6 @@ class Config implements ConfigInterface
     public function getApiHost(): string
     {
         return $this->api_host;
-    }
-
-    /**
-     * Returns the API Key
-     *
-     * @return string
-     */
-    public function getApiKey(): string
-    {
-        return $this->api_key;
     }
 
     /**
@@ -189,6 +169,26 @@ class Config implements ConfigInterface
         $pk = openssl_get_publickey($key);
         openssl_public_encrypt($this->getApiKey(), $token, $pk, OPENSSL_PKCS1_PADDING);
         return 'Bearer ' . base64_encode($token);
+    }
+
+    /**
+     * Returns the Public Key
+     *
+     * @return string
+     */
+    public function getPublicKey(): string
+    {
+        return $this->public_key;
+    }
+
+    /**
+     * Returns the API Key
+     *
+     * @return string
+     */
+    public function getApiKey(): string
+    {
+        return $this->api_key;
     }
 
 

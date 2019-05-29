@@ -27,14 +27,6 @@ class MPesaTest extends \PHPUnit\Framework\TestCase
      */
     private $msisdn;
 
-    protected function setUp()
-    {
-        $config = Config::loadFromFile(__DIR__ . '/config.test.php');
-        $this->transaction = new \abdulmueid\mpesa\Transaction($config);
-        $this->amount = 1;
-        $this->msisdn = ''; // Full MSISDN i.e. 258840000000
-    }
-
     /**
      * @return TransactionResponseInterface
      * @throws Exception
@@ -102,6 +94,14 @@ class MPesaTest extends \PHPUnit\Framework\TestCase
         $this->assertEmpty($query->getConversationID());
         $this->assertNotEmpty($query->getTransactionStatus());
         $this->assertStringStartsWith('INS-', $query->getCode());
+    }
+
+    protected function setUp()
+    {
+        $config = Config::loadFromFile(__DIR__ . '/config.test.php');
+        $this->transaction = new \abdulmueid\mpesa\Transaction($config);
+        $this->amount = 1;
+        $this->msisdn = ''; // Full MSISDN i.e. 258840000000
     }
 
 }

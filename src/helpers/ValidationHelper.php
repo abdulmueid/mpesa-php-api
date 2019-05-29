@@ -12,6 +12,8 @@
 
 namespace abdulmueid\mpesa\helpers;
 
+use Exception;
+
 /**
  * Class ValidationHelper
  * @package abdulmueid\mpesa\helpers
@@ -29,7 +31,7 @@ class ValidationHelper
      *
      * @param string $msisdn msisdn which will be validated and normalized afterwards.
      * @return string normalized phone number: 258(84|85)xxxxxxx
-     * @throws \Exception
+     * @throws Exception
      */
     public static function normalizeMSISDN($msisdn)
     {
@@ -51,7 +53,7 @@ class ValidationHelper
             $normalizedPhoneNumber = "258" . $matchedPhoneNumber;
             return $normalizedPhoneNumber;
         } else {
-            throw new \Exception("The provided number " . $msisdn . " is not valid Vodacom MSISDN.");
+            throw new Exception("The provided number " . $msisdn . " is not valid Vodacom MSISDN.");
         }
     }
 }

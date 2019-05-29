@@ -9,10 +9,10 @@
 
 namespace abdulmueid\mpesa;
 
+use abdulmueid\mpesa\helpers\ValidationHelper;
 use abdulmueid\mpesa\interfaces\ConfigInterface;
 use abdulmueid\mpesa\interfaces\TransactionInterface;
 use abdulmueid\mpesa\interfaces\TransactionResponseInterface;
-use abdulmueid\mpesa\helpers\ValidationHelper;
 use Exception;
 
 /**
@@ -50,7 +50,8 @@ class Transaction implements TransactionInterface
         string $msisdn,
         string $reference,
         string $third_party_reference
-    ): TransactionResponseInterface {
+    ): TransactionResponseInterface
+    {
         $msisdn = ValidationHelper::normalizeMSISDN($msisdn);
         $amount = round($amount, 2);
         $payload = [
@@ -91,7 +92,8 @@ class Transaction implements TransactionInterface
         string $msisdn,
         string $reference,
         string $third_party_reference
-    ): TransactionResponseInterface {
+    ): TransactionResponseInterface
+    {
         $msisdn = ValidationHelper::normalizeMSISDN($msisdn);
         $amount = round($amount, 2);
         $payload = [
@@ -131,7 +133,8 @@ class Transaction implements TransactionInterface
         string $receiver_party_code,
         string $reference,
         string $third_party_reference
-    ): TransactionResponseInterface {
+    ): TransactionResponseInterface
+    {
         $amount = round($amount, 2);
         $payload = [
             'input_Amount' => $amount,
@@ -167,7 +170,8 @@ class Transaction implements TransactionInterface
         float $amount,
         string $transaction_id,
         string $third_party_reference
-    ): TransactionResponseInterface {
+    ): TransactionResponseInterface
+    {
         $amount = round($amount, 2);
         $payload = [
             'input_Amount' => $amount,
@@ -203,7 +207,8 @@ class Transaction implements TransactionInterface
     public function query(
         string $query_reference,
         string $third_party_reference
-    ): TransactionResponseInterface {
+    ): TransactionResponseInterface
+    {
         $payload = [
             'input_QueryReference' => $query_reference,
             'input_ServiceProviderCode' => $this->config->getServiceProviderCode(),
