@@ -16,27 +16,49 @@ namespace abdulmueid\mpesa\interfaces;
 interface TransactionInterface
 {
     /**
-     * Initiates a payment transaction on the M-Pesa C2B API
-     * @param string $msisdn
+     * Initiates a C2B transaction on the M-Pesa API.
      * @param float $amount
+     * @param string $msisdn
      * @param string $reference
      * @param string $third_party_reference
      * @return TransactionResponseInterface
      */
-    public function payment(string $msisdn, float $amount, string $reference, string $third_party_reference): TransactionResponseInterface;
+    public function c2b(float $amount, string $msisdn, string $reference, string $third_party_reference): TransactionResponseInterface;
 
     /**
-     * Initiates the refund of a transaction on the M-Pesa Reversal API
-     * @param string $transaction_id
+     * Initiates a B2C transaction on the M-Pesa API.
      * @param float $amount
+     * @param string $msisdn
+     * @param string $reference
+     * @param string $third_party_reference
      * @return TransactionResponseInterface
      */
-    public function refund(string $transaction_id, float $amount): TransactionResponseInterface;
+    public function b2c(float $amount, string $msisdn, string $reference, string $third_party_reference): TransactionResponseInterface;
 
     /**
-     * Queries the status of a transaction on the M-Pesa Query Transaction Status API
-     * @param string $query_reference
+     * Initiates a B2B transaction on the M-Pesa API.
+     * @param float $amount
+     * @param string $receiver_party_code
+     * @param string $reference
+     * @param string $third_party_reference
      * @return TransactionResponseInterface
      */
-    public function query(string $query_reference): TransactionResponseInterface;
+    public function b2b(float $amount, string $receiver_party_code, string $reference, string $third_party_reference): TransactionResponseInterface;
+
+    /**
+     * Initiates a transaction Reversal on the M-Pesa API.
+     * @param float $amount
+     * @param string $transaction_id
+     * @param string $third_party_reference
+     * @return TransactionResponseInterface
+     */
+    public function reversal(float $amount, string $transaction_id, string $third_party_reference): TransactionResponseInterface;
+
+    /**
+     * Initiates a transaction Query on the M-Pesa API.
+     * @param string $query_reference
+     * @param string $third_party_reference
+     * @return TransactionResponseInterface
+     */
+    public function query(string $query_reference, string $third_party_reference): TransactionResponseInterface;
 }

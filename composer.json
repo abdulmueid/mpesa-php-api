@@ -10,7 +10,10 @@
         }
     ],
     "require": {
-        "php": "^7.0"
+        "php": "^7.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-openssl": "*"
     },
     "autoload": {
         "psr-4": {
