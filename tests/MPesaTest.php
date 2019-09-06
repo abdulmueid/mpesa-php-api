@@ -27,7 +27,7 @@ class MPesaTest extends \PHPUnit\Framework\TestCase
      */
     private $msisdn;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $config = Config::loadFromFile(__DIR__ . '/config.test.php');
         $this->transaction = new \abdulmueid\mpesa\Transaction($config);

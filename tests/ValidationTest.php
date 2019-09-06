@@ -15,7 +15,7 @@ class ValidationTest extends TestCase
     private $validMSISDNs;
     private $invalidStrings;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         // Set up valid MSISDNs
         $this->validMSISDNs = [];
