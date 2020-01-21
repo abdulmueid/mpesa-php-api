@@ -1,7 +1,6 @@
 <?php
 /**
- * ValidationHelper.php
- * Helper functions to validate anything.
+ * ValidationHelper validates and normalizes MSISDN as per ITU E.164 standard
  *
  * @author      Kishan Nareshpal Jadav <kishan_jadav@hotmail.com | https://kishannareshpal.github.io>
  * @copyright   Copyright (c) Kishan Nareshpal Jadav

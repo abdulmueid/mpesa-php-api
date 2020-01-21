@@ -1,5 +1,7 @@
 <?php
 /**
+ * TransactionInterface
+ *
  * @author      Abdul Mueid Akhtar <abdul.mueid@gmail.com>
  * @copyright   Copyright (c) Abdul Mueid akhtar
  * @license     http://mit-license.org/

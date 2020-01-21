@@ -44,7 +44,7 @@ class ValidationTest extends TestCase
         return true;
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         // Set up valid MSISDNs
         $this->validMSISDNs = [];

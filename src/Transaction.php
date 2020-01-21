@@ -1,5 +1,7 @@
 <?php
 /**
+ * Transaction Class implements all API calls as per Transaction Interface
+ *
  * @author      Abdul Mueid Akhtar <abdul.mueid@gmail.com>
  * @copyright   Copyright (c) Abdul Mueid akhtar
  * @license     http://mit-license.org/
@@ -164,6 +166,7 @@ class Transaction implements TransactionInterface
      * Initiates a Reversal transaction on the M-Pesa API.
      * @param float $amount
      * @param string $transaction_id
+     * @param string $third_party_reference
      * @return TransactionResponseInterface
      */
     public function reversal(
