@@ -57,6 +57,4 @@ This library is release under the MIT License. See LICENSE file for details.
 
 ## TODO
 
-1. Rewrite Tests - Current Tests Broken
-2. Generate Docs
-2. Add more examples
+1. Add more examples
