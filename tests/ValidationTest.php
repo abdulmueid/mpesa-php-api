@@ -15,7 +15,36 @@ class ValidationTest extends TestCase
     private $validMSISDNs;
     private $invalidStrings;
 
-    protected function setUp()
+    /**
+     * @return bool
+     * @throws Exception
+     */
+    public function testValidMSISDNs()
+    {
+        foreach ($this->validMSISDNs as $msisdn) {
+            $this->assertIsString(ValidationHelper::normalizeMSISDN($msisdn));
+        }
+        return true;
+    }
+
+    /**
+     * @return bool
+     */
+    public function testInvalidStrings()
+    {
+        foreach ($this->invalidStrings as $string) {
+            $invalidString = true;
+            try {
+                ValidationHelper::normalizeMSISDN($string); // Should throw exception
+                $invalidString = false;
+            } catch (Exception $e) {
+            }
+            $this->assertTrue($invalidString, $string . " is not supposed to be valid");
+        }
+        return true;
+    }
+
+    protected function setUp(): void
     {
         // Set up valid MSISDNs
         $this->validMSISDNs = [];
@@ -58,34 +87,5 @@ class ValidationTest extends TestCase
         $this->invalidStrings[] = "258871231234";
         $this->invalidStrings[] = "+258871231234";
         $this->invalidStrings[] = "00258871231234";
-    }
-
-    /**
-     * @return bool
-     * @throws Exception
-     */
-    public function testValidMSISDNs()
-    {
-        foreach ($this->validMSISDNs as $msisdn) {
-            $this->assertIsString(ValidationHelper::normalizeMSISDN($msisdn));
-        }
-        return true;
-    }
-
-    /**
-     * @return bool
-     */
-    public function testInvalidStrings()
-    {
-        foreach ($this->invalidStrings as $string) {
-            $invalidString = true;
-            try {
-                ValidationHelper::normalizeMSISDN($string); // Should throw exception
-                $invalidString = false;
-            } catch (Exception $e) {
-            }
-            $this->assertTrue($invalidString, $string . " is not supposed to be valid");
-        }
-        return true;
     }
 }

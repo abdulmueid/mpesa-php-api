@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit backupGlobals="false"
-         backupStaticAttributes="false"
-         bootstrap="vendor/autoload.php"
-         colors="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         processIsolation="false"
-         stopOnFailure="false">
+<phpunit
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/8.5/phpunit.xsd"
+        backupGlobals="true"
+        backupStaticAttributes="false"
+        bootstrap="./vendor/autoload.php"
+        cacheTokens="false"
+        colors="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        processIsolation="false"
+        stopOnError="false"
+        stopOnFailure="false"
+        stopOnIncomplete="false"
+        stopOnSkipped="false"
+        stopOnRisky="false"
+        timeoutForSmallTests="1"
+        timeoutForMediumTests="10"
+        timeoutForLargeTests="60"
+        verbose="true">
+    <!-- SET THESE PARAMETERS BEFORE RUNNING TESTS -->
+    <php>
+        <env name="MPESA_API_HOST" value="api.sandbox.vm.co.mz"/>
+        <env name="MPESA_PUBLIC_KEY" value="" />
+        <env name="MPESA_API_KEY" value="" />
+        <env name="MPESA_ORIGIN" value="" />
+        <env name="MPESA_SERVICE_PROVIDER_CODE" value="" />
+        <env name="MPESA_SECURITY_CREDENTIAL" value="" />
+        <env name="MPESA_INITIATOR_IDENTIFIER" value="" />
+        <env name="MPESA_CUSTOMER_MSISDN" value="" />
+        <env name="MPESA_B2B_RECEIVER" value="" />
+    </php>
+    <!-- DO NOT EDIT BELOW THIS LINE -->
     <testsuites>
         <testsuite name="M-Pesa API Test Suite">
             <directory suffix=".php">./tests/</directory>

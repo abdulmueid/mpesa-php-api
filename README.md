@@ -26,14 +26,24 @@ composer require abdulmueid/mpesa
 
     (See Class documentation in docs/ folder for parameter details.)
 
-    1. Initiate a payment.
+    1. Initiate a C2B payment collection.
         ```php
-        $payment = $transaction->payment(...);
+        $c2b = $transaction->c2b(...);
+        ```
+        
+    2. Initiate a B2C payment.
+        ```php
+        $b2c = $transaction->b2c(...);
+        ```
+        
+    3. Initiate a B2B payment.
+        ```php
+        $b2b = $transaction->b2b(...);
         ```
     
-    2. Initiate a refund.
+    2. Initiate a reversal.
         ```php
-        $refund = $transaction->refund(...);
+        $reversal = $transaction->reversal(...);
         ```
     
     3. Query a transaction.
@@ -41,24 +51,10 @@ composer require abdulmueid/mpesa
         $query = $transaction->query(...);
         ```
         
-## Testing
-1. Update tests/config.test.php with required parameters
-2. Enter the test MSISDN in tests/MPesaTest.php on line 35
-3. Run **PHPUnit 7** phar archive in the project folder (https://phar.phpunit.de/phpunit-7.phar)
-4. Check the phone for M-Pesa payment requests
-
-The test case currently creates a new transaction, queries the transaction status and refunds the transaction.
-**Tests may be billable when running on production.**
-
-## Generating Docs
-1. Run **phpDocumentor 2.9** phar archive in the project folder (http://phpdoc.org/phpDocumentor.phar)
-
 ## License
 
 This library is release under the MIT License. See LICENSE file for details.
 
 ## TODO
 
-1. Improve documentation
-2. Add more examples
-3. Improve test suite and test automation
+1. Add more examples

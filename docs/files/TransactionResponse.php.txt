@@ -1,5 +1,7 @@
 <?php
 /**
+ * TransactionResponse parses all incoming responses from M-Pesa and provides the information in a clean way
+ *
  * @author      Abdul Mueid Akhtar <abdul.mueid@gmail.com>
  * @copyright   Copyright (c) Abdul Mueid akhtar
  * @license     http://mit-license.org/

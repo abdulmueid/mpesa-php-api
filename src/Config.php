@@ -1,5 +1,7 @@
 <?php
 /**
+ * Config provides a standard way to get/set required M-Pesa parameters and generate Bearer Tokens
+ *
  * @author      Abdul Mueid Akhtar <abdul.mueid@gmail.com>
  * @copyright   Copyright (c) Abdul Mueid akhtar
  * @license     http://mit-license.org/
@@ -107,76 +109,6 @@ class Config implements ConfigInterface
     }
 
     /**
-     * Returns the Public Key
-     *
-     * @return string
-     */
-    public function getPublicKey(): string
-    {
-        return $this->public_key;
-    }
-
-    /**
-     * Returns API Hostname
-     *
-     * @return string
-     */
-    public function getApiHost(): string
-    {
-        return $this->api_host;
-    }
-
-    /**
-     * Returns the API Key
-     *
-     * @return string
-     */
-    public function getApiKey(): string
-    {
-        return $this->api_key;
-    }
-
-    /**
-     * Returns the Origin Header
-     *
-     * @return string
-     */
-    public function getOrigin(): string
-    {
-        return $this->origin;
-    }
-
-    /**
-     * Returns the Service Provider Code
-     *
-     * @return string
-     */
-    public function getServiceProviderCode(): string
-    {
-        return $this->service_provider_code;
-    }
-
-    /**
-     * Returns the Initiator Identifier
-     *
-     * @return string
-     */
-    public function getInitiatorIdentifier(): string
-    {
-        return $this->initiator_identifier;
-    }
-
-    /**
-     * Returns the Security Credential
-     *
-     * @return string
-     */
-    public function getSecurityCredential(): string
-    {
-        return $this->security_credential;
-    }
-
-    /**
      * Encrypts the API key with public key and returns a usable Bearer Token
      *
      * @return string
@@ -191,5 +123,66 @@ class Config implements ConfigInterface
         return 'Bearer ' . base64_encode($token);
     }
 
+    /**
+     * Returns M-Pesa Public Key
+     * @return string
+     */
+    public function getPublicKey(): string
+    {
+        return $this->public_key;
+    }
 
+    /**
+     * Returns API Hostname
+     * @return string
+     */
+    public function getApiHost(): string
+    {
+        return $this->api_host;
+    }
+
+    /**
+     * Returns API Key
+     * @return string
+     */
+    public function getApiKey(): string
+    {
+        return $this->api_key;
+    }
+
+    /**
+     * Returns Origin
+     * @return string
+     */
+    public function getOrigin(): string
+    {
+        return $this->origin;
+    }
+
+    /**
+     * Returns Service Provider Code
+     * @return string
+     */
+    public function getServiceProviderCode(): string
+    {
+        return $this->service_provider_code;
+    }
+
+    /**
+     * Returns Initiator Identifier
+     * @return string
+     */
+    public function getInitiatorIdentifier(): string
+    {
+        return $this->initiator_identifier;
+    }
+
+    /**
+     * Returns Security Credential
+     * @return string
+     */
+    public function getSecurityCredential(): string
+    {
+        return $this->security_credential;
+    }
 }
