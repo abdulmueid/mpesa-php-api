@@ -1,37 +1,78 @@
-## Welcome to GitHub Pages
+# Welcome to M-Pesa PHP API
 
-You can use the [editor on GitHub](https://github.com/abdulmueid/mpesa-php-api/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
+This project aims to provide an easy-to-use and up-to-date PHP wrapper for the M-Pesa Mozambique API.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Target version of M-Pesa API: **v1x**
 
-### Markdown
+## Installation
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+Install using composer:
+```
+composer require abdulmueid/mpesa:2.0.0-beta1
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Usage
 
-### Jekyll Themes
+1. Load the configuration from file.
+    ```php
+    $config = \abdulmueid\mpesa\Config::loadFromFile('/path/to/config.php');
+    ```
+    See sample configuration file in examples folder.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/abdulmueid/mpesa-php-api/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+2. Create a Transaction using the configuration.
+    ```php
+    $transaction = new \abdulmueid\mpesa\Transaction($config);
+    ```
+    
+3. Execute API operations and pass appropriate parameters. 
 
-### Support or Contact
+    1. Initiate a C2B payment collection.
+       ```php
+       $c2b = $transaction->c2b(
+           float $amount,
+           string $msisdn,
+           string $reference,
+           string $third_party_reference
+       );
+        ```
+        
+    2. Initiate a B2C payment.
+       ```php
+       $b2c = $transaction->b2c(
+           float $amount,
+           string $msisdn,
+           string $reference,
+           string $third_party_reference
+       );
+       ```
+        
+    3. Initiate a B2B payment.
+       ```php
+       $b2b = $transaction->b2b(
+            float $amount,
+            string $receiver_party_code,
+            string $reference,
+            string $third_party_reference
+       );
+       ```
+    
+    2. Initiate a reversal.
+       ```php
+       $reversal = $transaction->reversal(
+           float $amount,  
+           string $transaction_id,
+           string $third_party_reference
+       );
+       ```
+    
+    3. Query a transaction.
+       ```php
+       $query = $transaction->query(
+           string $query_reference,
+           string $third_party_reference
+       );
+       ```
+        
+## License
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+This library is release under the MIT License. See LICENSE file for details.
