@@ -99,6 +99,8 @@ if($c2b->getCode() === 'INS-0') {
 ```
 
 ## Testing
+This repo provides Unit Tests to validate the objects and their interaction with M-Pesa.
+
 To run tests, 
 1. Open the `phpunit.xml` file and add the require credentials/parameters as supplied by M-Pesa.
 2. Run `phpunit` 
