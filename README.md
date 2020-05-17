@@ -8,7 +8,7 @@ Target version of M-Pesa API: **v1x**
 
 Install using composer:
 ```
-composer require abdulmueid/mpesa:2.0.0-beta1
+composer require abdulmueid/mpesa
 ```
 
 ## Usage
