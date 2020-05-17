@@ -72,7 +72,33 @@ composer require abdulmueid/mpesa:2.0.0-beta1
            string $third_party_reference
        );
        ```
-        
+4. Check Response
+
+    All transactions return the `TransactionResponse` object. The object has the following public methods:
+
+    1. `getCode()` - Returns the response code i.e. `INS-0`
+
+    2. `getDescription()` - Returns the description.
+
+    3. `getTransactionID()` - Returns the transaction ID.
+
+    4. `getConversationID()` - Returns the conversation ID.
+
+    5. `getTransactionStatus()` - Returns the transaction status. Only populated when calling the `query()` transaction.
+
+    6. `getResponse()` - Returns the full response JSON object as received from M-Pesa servers. Good for debugging any issues or undocumented behaviors of the M-Pesa API.
+
+In a typical scenario, code to check for successful transactions should be as follows:
+
+```php
+$c2b = $transaction->c2b(...);
+
+if($c2b->getCode() === 'INS-0') {
+    // Transaction Successful, Do something here
+}
+```
+
+
 ## License
 
 This library is release under the MIT License. See LICENSE file for details.
