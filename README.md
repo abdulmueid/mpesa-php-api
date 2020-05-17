@@ -98,6 +98,14 @@ if($c2b->getCode() === 'INS-0') {
 }
 ```
 
+## Testing
+To run tests, 
+1. Open the `phpunit.xml` file and add the require credentials/parameters as supplied by M-Pesa.
+2. Run `phpunit` 
+3. Check the handset for USSD prompts to approve test transactions.
+
+All tests use 1MT as the test amount.
+
 
 ## License
 
