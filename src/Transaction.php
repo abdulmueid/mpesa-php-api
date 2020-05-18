@@ -77,6 +77,10 @@ class Transaction implements TransactionInterface
         curl_setopt($request_handle, CURLOPT_CUSTOMREQUEST, 'POST');
         curl_setopt($request_handle, CURLOPT_POSTFIELDS, $payload);
         $result = curl_exec($request_handle);
+       
+        if ($result === false) 
+            $result = curl_error($request_handle);
+        
         return new TransactionResponse($result);
     }
 
@@ -198,6 +202,10 @@ class Transaction implements TransactionInterface
         curl_setopt($request_handle, CURLOPT_CUSTOMREQUEST, 'PUT');
         curl_setopt($request_handle, CURLOPT_POSTFIELDS, $payload);
         $result = curl_exec($request_handle);
+        
+        if ($result === false) 
+            $result = curl_error($request_handle);
+        
         return new TransactionResponse($result);
     }
 
@@ -228,6 +236,10 @@ class Transaction implements TransactionInterface
             'Authorization: ' . $this->config->getBearerToken()
         ]);
         $result = curl_exec($request_handle);
+        
+        if ($result === false) 
+            $result = curl_error($request_handle);
+        
         return new TransactionResponse($result);
     }
 }
