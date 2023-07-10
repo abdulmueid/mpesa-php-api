@@ -58,4 +58,32 @@ interface TransactionResponseInterface
      * @return string
      */
     public function getResponse(): string;
+
+     /**
+     * Returns the transaction amount
+     *
+     * @return float
+     */
+    public function getAmount(): float;
+
+    /**
+     * Returns the transaction timestamp
+     *
+     * @return string
+     */
+    public function getTimestamp(): string;
+
+    /**
+     * Returns the error code, if applicable
+     *
+     * @return string|null
+     */
+    public function getErrorCode(): ?string;
+
+    /**
+     * Returns the error message, if applicable
+     *
+     * @return string|null
+     */
+    public function getErrorMessage(): ?string;
 }
